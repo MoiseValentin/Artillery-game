@@ -114,7 +114,7 @@ void resetJumatate2Matrice()
     }
 }
 
-void afisareMesajLCD(String mesaj,String mesaj2) //primul mesaj va fi afisat cu autoscroll pe prima linie, iar al 2-lea mesaj in mod normal pe a 2-a linie
+void afisareMesajLcd(String mesaj,String mesaj2) //primul mesaj va fi afisat cu autoscroll pe prima linie, iar al 2-lea mesaj in mod normal pe a 2-a linie
 {
     lcd.clear();
     lcd.setCursor(pozitieMesaj,0);
@@ -342,7 +342,7 @@ void schimbareModelMatrice()//pe matrice va fi afisata o numaratoare inversa pan
     }
 }
 
-void afisareMesajLCDinceput()
+void afisareMesajLcdInceput()
 {
     lcd.clear();
     lcd.setCursor(1,0);
@@ -367,9 +367,9 @@ void citireJS()
         miscareDreapta(2);
 }
 
-void miscareStanga(int nrJS)
+void miscareStanga(int numarJoystick)
 {
-    if (nrJS == 1 && pozitieTanc1 < 7)
+    if (numarJoystick == 1 && pozitieTanc1 < 7)
     {
         matriceLed[0][pozitieTanc1 + 1] = 1;
         matriceLed[0][pozitieTanc1] = 1;
@@ -379,7 +379,7 @@ void miscareStanga(int nrJS)
         matriceLed[1][pozitieTanc1 - 1] = 0;
         pozitieTanc1++;
     }
-    if (nrJS == 2 && pozitieTanc2 > 0)
+    if (numarJoystick == 2 && pozitieTanc2 > 0)
     {
         matriceLed[6][pozitieTanc2 - 1] = 1;
         matriceLed[6][pozitieTanc2] = 1;
@@ -391,9 +391,9 @@ void miscareStanga(int nrJS)
     }
 }
 
-void miscareDreapta(int nrJS)
+void miscareDreapta(int numarJoystick)
 {
-    if (nrJS == 1 && pozitieTanc1 >1)
+    if (numarJoystick == 1 && pozitieTanc1 >1)
     {
         matriceLed[0][pozitieTanc1 - 2] = 1;
         matriceLed[0][pozitieTanc1 - 1] = 1;
@@ -403,7 +403,7 @@ void miscareDreapta(int nrJS)
         matriceLed[1][pozitieTanc1] = 0;
         pozitieTanc1--;
     }
-    if (nrJS == 2 && pozitieTanc2 < 6)
+    if (numarJoystick == 2 && pozitieTanc2 < 6)
     {
         matriceLed[6][pozitieTanc2] = 0;
         matriceLed[6][pozitieTanc2 + 2] = 1;
@@ -415,7 +415,7 @@ void miscareDreapta(int nrJS)
     }
 }
 
-void afisareMesajLCDInJoc()
+void afisareMesajLcdInJoc()
 {
     lcd.clear();
     lcd.setCursor(0,0);
@@ -500,10 +500,10 @@ void miscareProiectil()
     }
 }
 
-void afisareMesajLCDfinal()
+void afisareMesajLcdFinal()
 {
     lcd.clear();
-    afisareMesajLCD("Pentru revansa apasati pe Joystick","");
+    afisareMesajLcd("Pentru revansa apasati pe Joystick","");
     lcd.setCursor(0,1);
     if (castigator == 1)
         lcd.print("Felicitari J1 !!");
@@ -540,7 +540,7 @@ void loop()
             ultimulMillis = millis();
             verificareStareInitiala();
             afisareMatrice();
-            afisareMesajLCD("Apasati pe Joystick pentru a incepe!","Bine ati venit! ");
+            afisareMesajLcd("Apasati pe Joystick pentru a incepe!","Bine ati venit! ");
         }
         break;
 
@@ -550,7 +550,7 @@ void loop()
             ultimulMillis = millis();
             schimbareModelMatrice();
             afisareMatrice();
-            afisareMesajLCDinceput();
+            afisareMesajLcdInceput();
         }
         break;
 
@@ -561,7 +561,7 @@ void loop()
             lansareProiectil();
             citireJS();
             afisareMatrice();
-            afisareMesajLCDInJoc();
+            afisareMesajLcdInJoc();
         }
         break;
 
@@ -569,7 +569,7 @@ void loop()
         if (millis() - ultimulMillis > 500)
         {
             ultimulMillis = millis();
-            afisareMesajLCDfinal();
+            afisareMesajLcdFinal();
             schimbareMatriceFinala();
             afisareMatrice();
         }
