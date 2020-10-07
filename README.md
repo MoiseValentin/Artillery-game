@@ -1,5 +1,5 @@
 ### Started on: 11.12.2018
-### Last updated: 21.12.2018
+### Last updated: 19.12.2018
 # Arduino Project - Artillery Game
 ## Components:
 - Arduino UNO
