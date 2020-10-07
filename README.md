@@ -1,23 +1,21 @@
-# Proiect Arduino - Joc Tancuri
-## Componente:
+# Arduino Project - Artillery Game
+## Components:
 - Arduino UNO
-- Cablu Arduino USB
-- 2x Breadboard
-- Matrice de leduri 8x8 (1088AS)
-- Driver MAX7219
-- 2x Joystick
+- 8x8 LED Matrix - 1088AS
+- LED Matrix Driver - MAX7219
 - 16x2 LCD
-- 1 condensator 10 uF
-- 1 condensator 0.1 uF (100 nF)
-- Rezistenta 220 ohm
-- Rezistenta 100k ohm
-- Fire de conexiune
+- 2 Joysticks
+- 2 Breadboards
+- 2 Capacitors: 10 µF, 0.1 µF
+- 2 Resistors: 220 Ω, 100k Ω
+- Wires and USB cable
 
-![Joc tancuri Arduino](https://i.imgur.com/b7qTEfq.jpg)
+![Arduino Artillery Game](https://i.imgur.com/b7qTEfq.jpg)
 
-## Descriere joc:
-Acest joc consta in lupta dintre 2 jucatori, fiecare avand cate un tanc si 2 vieti. Pentru a incepe jocul ambii jucatori trebuie sa tina apasat butonul joystickului, iar dupa aproximativ 3 secunde jucatorii pot incepe sa se impuste reciproc pana ramane un singur castigator.
-Dupa afisarea invingatorului, jucatorii pot sa se joace din nou daca vor apasa iar pe butoane.
+## Description:
+In this two-player shooter game each player is controlling a tank and has to take down the enemy while avoiding the approaching missiles. Each tank can be destroyed by being hit twice and the last man standing is the winner. 
+To start the game both players have to keep the joystick button pressed for one second, triggering a 3 seconds countdown which will allow them to get ready. After only one tank will remain in the battle, an arrow will appear to indicate the winner and the players can start a new match by pressing the joystick buttons again.
+More details about the game progress can be seen at any time on the LCD.
 
-## Link demo:
+## Demo:
 https://youtu.be/L_xbZB35NQg
